@@ -1,0 +1,205 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Your Daily Agenda</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+  
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primarynavbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Your Daily Agenda</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto" id="navbar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Button to open the modal login form -->
+                            <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="learnmore.html#sign-uplink">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout1" >Logout</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- Modal Login Form -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closebuttonbox"></span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+
+
+            <div class="container loginform">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label><b id="password">Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div><input type="checkbox" checked="checked" id="rememberme">Remember me</div>
+                <button type="button" id="loginbutton1" onclick="document.getElementById('id01').style.display='none'">Login</button>
+
+            </div>
+
+            <div class="container" style="background-color:#ffffff">
+
+                <span class="psw">Forgot <a href="#" id="forgotpassword">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Page Heading -->
+    <div class="myHead2 text-center">
+
+
+    </div>
+
+    <!-- Page Content -->
+
+    <!-- /.container -->
+    <section id="about">
+        <div class="container learnmorecontainer">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+
+                    <h2>The aim of Your Daily Agenda</h2>
+                    <p class="lead">Your Daily Agenda is a good way to start your day. By creating your own daily planning and sharing it with your friends you can follow your friends' activity while giving structure to your day.</p>
+                    <p id="getstarted" class="lead">Get started by creating your own agenda for the day below!</p>
+                   
+
+                    <!-- /.container for to-do list -->
+                    <div id="todolistcontainer">
+                        <div class="todolistdiv"><h2>Your Daily Activities</h2>
+                        <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
+
+
+                        <input type="text" name="ListItem" placeholder="Activity" />
+                        <input type="text" name="place" placeholder="Location" />
+                        <input type="text" name="time" placeholder="Time" />
+
+
+                        <div id="button" class="addbutton">Add</div></div>
+                        <br/>
+                            <ol id="todolistlist"></ol>
+                    </div>
+                    <p id="getstarted" class="lead">Please sign up below in order to create your own profile and share your activities with your friends.</p>
+
+                    <div class="panel panel-default sign-up" id="sign-uplink">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Sign up here! <small>It's free!</small></h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="submit" value="Register" class="btn btn-info btn-block" id="registerbutton">
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Daily Agenda 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('ol #todolistlist').sortable();
+    })
+    </script>
+    <script src="{% static 'javascript/main.js' %}"></script>
+
+    
+
+  
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Your Daily Agenda</title>
+
+    <!-- Bootstrap core CSS -->
+   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+
+
+
+
+
+    <!-- Navigation -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primarynavbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Your Daily Agenda</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto" id="navbar">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Home
+                <span class="sr-only">(current)</span>
+              </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="learnmore.html#sign-uplink">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout1">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+    <!-- Modal Login Form -->
+
+    <!-- Button to open the modal login form -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closebuttonbox"></span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+
+
+            <div class="container loginform">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label><b id="password">Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div id="remembermebox"><input type="checkbox" checked="checked" id="rememberme">Remember me</div>
+                <button type="button" id="loginbutton1" onclick="document.getElementById('id01').style.display='none'">Login</button>
+
+            </div>
+
+            <div class="container" style="background-color:#ffffff">
+
+                <span class="psw">Forgot <a href="#" id="forgotpassword">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Page Heading -->
+    <div class="myHead text-center">
+
+        <div class="Introtext">
+            <h1 id="welcome">
+                <Strong>Welcome to Your Daily Agenda.</Strong>
+            </h1>
+            <h5 id="planyour">Plan your daily activities and share them with your friends!</h5>
+            <div class="button mx-auto">
+                <a href="learnmore.html">
+                    <p id="learnmore">Learn more</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Page Content -->
+
+    <div class="container maincontainer">
+        <div class="recent">
+            <p>Latest posts</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 portfolio-item col-xs- card1" >
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <div class="grid">
+
+
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar4.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Tomas Kincaid</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item card1">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <div class="grid">
+
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar5.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Lonnie Swain</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item card1">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <div class="grid">
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar3.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Rubin Brogden</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item card1">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <div class="grid">
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar1.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Morgan Sprankle</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <div class="grid">
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar2.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Kevin Eunice</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <div class="grid">
+                            <div><img class="card-img-top avatar" id="avatarimg" src="{% static 'img/avatar6.jpg' %}"  alt="">
+                                <div id="MoveNameAndDate">
+                                    <p class="NameandDate">Tambra Lipsett</p>
+                                    <p id="Date">12/7/2017</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <p id="activity">brunch<span id="time">10:30 am</span></p>
+                                <p id="place">La place, Rosmalen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">lunch run meeting<span id="time">10:30 am</span></p>
+                                <p id="place">Skatepark, Grote Wielen</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">finish big project<span id="time">10:30 am</span></p>
+                                <p id="place">At home</p>
+                            </div>
+                            <div class="box">
+                                <p id="activity">dinner<span id="time">7:30 pm</span></p>
+                                <p id="place">Het wapen, Rosmalen</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center card1">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Daily Agenda 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="{% static 'javascript/main.js' %}"></script>
+
+</body>
+
+</html>
