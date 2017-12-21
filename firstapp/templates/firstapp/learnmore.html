@@ -17,7 +17,7 @@
 
 
     <!-- Custom styles for this template -->
-  
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
@@ -47,9 +47,9 @@
                             <a class="nav-link active" href="learnmore.html#sign-uplink">Sign up</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="logout1" >Logout</a>
+                            <a class="nav-link" id="logout1">Logout</a>
                         </li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -109,22 +109,35 @@
                     <h2>The aim of Your Daily Agenda</h2>
                     <p class="lead">Your Daily Agenda is a good way to start your day. By creating your own daily planning and sharing it with your friends you can follow your friends' activity while giving structure to your day.</p>
                     <p id="getstarted" class="lead">Get started by creating your own agenda for the day below!</p>
-                   
+
 
                     <!-- /.container for to-do list -->
                     <div id="todolistcontainer">
-                        <div class="todolistdiv"><h2>Your Daily Activities</h2>
-                        <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
+                        <div class="todolistdiv">
+                            <h2>Your Daily Activities</h2>
+                            <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
+
+                            <form method="post">
+                                {% csrf_token %}
+                                <input name="activity" id="myInput" placeholder="Activity..."></input>
+                                <input name="place" type="text" placeholder="Place..."></input> 
+                                <input name="time" type="text" placeholder="Time..."></input> 
+                                <input id="addform" type="submit" value="Add" />
+                            </form>
+
+                          <!--  <input type="text" name="ListItem" placeholder="Activity" />
+                            <input type="text" name="place" placeholder="Location" />
+                            <input type="text" name="time" placeholder="Time" /> -->
 
 
-                        <input type="text" name="ListItem" placeholder="Activity" />
-                        <input type="text" name="place" placeholder="Location" />
-                        <input type="text" name="time" placeholder="Time" />
-
-
-                        <div id="button" class="addbutton">Add</div></div>
+                            
+                        </div>
                         <br/>
-                            <ol id="todolistlist"></ol>
+                        <ol id="todolistlist">
+                            {% for task in tasks %}
+                            <li id="listitem"><p class="activitylist">{{task.activity}}</p><span class="timelist">{{task.time}}</span><p class="locationlist">{{task.location}}</p></li>
+                            {% endfor %}
+                        </ol>
                     </div>
                     <p id="getstarted" class="lead">Please sign up below in order to create your own profile and share your activities with your friends.</p>
 
@@ -191,15 +204,16 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('ol #todolistlist').sortable();
-    })
+        $(document).ready(function() {
+            $('ol #todolistlist').sortable();
+        })
+
     </script>
     <script src="{% static 'javascript/main.js' %}"></script>
 
-    
 
-  
+
+
 </body>
 
 </html>
